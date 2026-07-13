@@ -1,0 +1,24 @@
+server:
+  port: 8000
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/eshop?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    # 自动根据 Entity 创建/更新表结构（开发时方便）
+    hibernate:
+      ddl-auto: update
+    # 打印 SQL（学习时能看到实际执行的 SQL）
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+# JWT 配置
+jwt:
+  secret: thisiskazevereshopsecretkeyforjwt
+  expiration: 7200  # 过期时间（秒），2小时
